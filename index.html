@@ -26,11 +26,183 @@
             alt="perfil"
             class="profile__image"
             />
+    <div class="profile__info">
+      <div class="profile__name-container">
+        <h2 class="profile__name">Jacques Cousteau</h2>
+        <img
+          src="./images/edit.png"
+          alt="edit"
+          class="profile__edit-button"
+        />
+      </div>
+      <p class="profile__job">Explorador</p>
+          </div>
+          <button type="button" class="profile__add-button">
+            <img
+              src="./images/add.png"
+              alt="add"
+              class="profile__add-button-icon"
+            />
+          </button>
+          </section> 
+          <section class="elements">
+            <div class="element">
+              <img
+                src="./images/vale.png"
+                alt="rio com arvores"
+                class="element__image"
+              />
+       <div class="element__description">
+        <p class="element__title">
+          Vale de Yosemite 
+        </p>
+        <img
+        src="./images/like.png"
+        alt="like"
+        class="element__icon"
+      />
+      <img
+        src="./images/like-dark.png"
+        alt="dark"
+        class="element__dark-icon"
+      />
+      </div>
     </div>
-           </section> 
+    <div class="element">
+      <img
+        src="./images/louise.png"
+        alt="lago entre as montanhas"
+        class="element__image"
+      />
+      <div class="element__description">
+        Lago Louise
+        <img
+          src="./images/like.png"
+          alt="like"
+          class="element__icon"
+        />
+        <img
+          src="./images/like-dark.png"
+          alt="dark"
+          class="element__dark-icon"
+        />
+      </div>
+    </div>
+    <div class="element">
+      <img
+        src="./images/montanha.png"
+        alt="montanha"
+        class="element__image"
+      />
+      <div class="element__description">
+        Montanhas Care...
+        <img
+          src="./images/like.png"
+          alt="like"
+          class="element__icon"
+        />
+        <img
+          src="./images/like-dark.png"
+          alt="dark"
+          class="element__dark-icon"
+        />
+      </div>
+    </div>
+    <div class="element">
+      <img
+        src="./images/latemar.png"
+        alt="montanha a noite"
+        class="element__image"
+      />
+      <div class="element__description">
+        Latemar
+        <img
+          src="./images/like.png"
+          alt="like"
+          class="element__icon"
+        />
+        <img
+          src="./images/like-dark.png"
+          alt="dark"
+          class="element__dark-icon"
+        />
+      </div>
+    </div>
+    <div class="element">
+      <img
+        src="./images/vanoise.png"
+        alt="lago com reflexo"
+        class="element__image"
+      />
+      <div class="element__description">
+        Vanoise National
+        <img
+          src="./images/like.png"
+          alt="like"
+          class="element__icon"
+        />
+        <img
+          src="./images/like-dark.png"
+          alt="dark"
+          class="element__dark-icon"
+        />
+      </div>
+    </div>
+    <div class="element">
+      <img
+        src="./images/lago.png"
+        alt="lago com barco"
+        class="element__image"
+      />
+      <div class="element__description">
+        Lago di Braies
+        <img
+          src="./images/like.png"
+          alt="like"
+          class="element__icon"
+        />
+        <img
+          src="./images/like-dark.png"
+          alt="dark"
+          class="element__dark-icon"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="popup">
+    <form class="popup__container">
+      <legend class="popup__container__title">Editar perfil</legend>
+
+      <fieldset class="popup__container__fieldset">
+        <input
+          type="text"
+          class="popup__container__input"
+          id="name"
+          placeholder="Jacques Costeau"
+        />
+        <input
+          type="text"
+          class="popup__container__input"
+          id="job"
+          placeholder="Explorador"
+        />
+      </fieldset>
+      
+      <button class="popup__container__button" type="submit">
+        Salvar
+      </button>
+
+      <button class="popup__container__close-button">
+        <img
+          src="./images/close.png"
+          alt="close icon"
+          class="popup__container__close-button-icon"
+        />
+      </button>
+    </form>
+  </section>
         </main>
         <footer class="footer">&copy; 2021 Around The U.S.</footer>
-    
     <script src="./index.js"></script>
 </body>
 </html>
