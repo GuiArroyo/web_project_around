@@ -1,4 +1,4 @@
-// elementos DOM aqui eu eu dei a funçao aos botons criados no html, tem que fazer com muita calma, extremamente confuso//
+// elementos DOM aqui eu crio uma variavel //
 
 let editButton = document.querySelector(".profile__edit-button");
 let closeButton = document.querySelector(".popup__container__close-button");
@@ -23,7 +23,7 @@ function handleProfileFormSubmit(evt) {
   let nameInput = document.querySelector("#name").value;
   let jobInput = document.querySelector("#job").value;
 
-  // vai imprimir os dados, porem precisa ligar//
+  // imprimir os dados, porem precisa ligar//
   console.log(nameInput, jobInput);
 
   //local onde será exibido //
@@ -38,6 +38,7 @@ function handleProfileFormSubmit(evt) {
 }
 
 // quando o botão open é clicado ele puxa a função openPopUp e abre o formulário //
+// de acordo com o que o thiago me ajudou, o addeventlistener é padrão //
 editButton.addEventListener("click", openPopUp);
 closeButton.addEventListener("click", closePopUp);
 formElement.addEventListener("submit", handleProfileFormSubmit);
