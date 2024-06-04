@@ -1,11 +1,11 @@
-.elements {
+.elements{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 17px;
     row-gap: 20px;
   }
   
-  .element {
+  .element{
     max-width: 415px; 
     position: relative;
     display: flex;
