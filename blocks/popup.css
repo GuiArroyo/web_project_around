@@ -20,7 +20,7 @@
     box-shadow: 0px 0px 25px 0px #00000026;
   }
   
-  .popup__container__title {
+  .popup__container-title {
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;
@@ -28,21 +28,21 @@
     margin-bottom: 54px;
   }
   
-  .popup__container__fieldset {
+  .popup__container-fieldset {
     display: flex;
     flex-direction: column;
+    gap: 30px;
     padding: 0;
     margin: 0;
     border: none;
-    gap: 30px;
   }
   
-  .popup__container__input {
+  .popup__container-input {
     border: none;
     border-bottom: 1px solid #00000020;
   }
   
-  .popup__container__button {
+  .popup__container-button {
     background-color: #000000;
     color: #ffffff;
     font-size: 18px;
@@ -53,12 +53,12 @@
     padding: 18px 0;
   }
   
-  .popup__container__button:hover {
+  .popup__container-button:hover {
     background-color: #00000080;
     border: none;
   }
   
-  .popup__container__close-button {
+  .popup__container-closebutton {
     background-color: #000000;
     width: 40px;
     display: flex;
@@ -69,8 +69,8 @@
     right: -35px;
     cursor: pointer;
   }
-  
-  .popup__container__close-button:hover .popup__container__close-button-icon {
+
+  .popup__container-closebutton:hover .popup__container-closebuttonicon {
     filter: brightness(0) invert(1);
     opacity: 0.5;
   }

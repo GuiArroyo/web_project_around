@@ -1,7 +1,7 @@
 // elementos DOM aqui eu crio uma variavel //
 
 let editButton = document.querySelector(".profile__edit-button");
-let closeButton = document.querySelector(".popup__container__close-button");
+let closeButton = document.querySelector(".popup__container-closebutton");
 let formElement = document.querySelector(".popup__container");
 
 function openPopUp() {
