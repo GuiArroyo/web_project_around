@@ -1,7 +1,8 @@
 .profile {
-    margin: 40px 0 50px;
+    margin: 40px auto 50px;
     display: flex;
     align-items: center;
+    max-width: 880px;
   }
   
 .profile__info {
@@ -19,6 +20,9 @@
   font-size: 42px;
   line-height: 48px;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__job {

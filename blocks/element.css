@@ -1,11 +1,14 @@
 .elements{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 17px;
-    row-gap: 20px;
+    gap: 17px;
+    max-width: 880px;
+    margin: 0 auto;
+    
   }
   .element{
-    max-width: 415px;
+    width: 282px;
+    height: 361px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,6 +32,8 @@
   
   .element__description {
     display: flex;
+    max-width: 287px;
+    max-height: 77.05px;
     justify-content: space-between;
     background-color: #ffffff;
     color: #000000;
@@ -39,6 +44,9 @@
     align-items: center;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   
   .element__icon:hover {
