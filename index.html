@@ -1,209 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="photos">
-    <meta name="author" content="Guilherme D. Arroyo">
-    <meta name="keywords" content="redesocial, fotos, explorador, projeto, viagem, montanha">
-    <link rel="stylesheet" href="./pages/index.css">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fotos" />
+    <meta name="author" content="Guilherme D. Arroyo" />
+    <meta name="keywords" content="paisagens, redesocial, fotos, explorador, projeto, viagem, montanha, natureza, design, fotografia" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <title>Around The U.S.</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="page">
       <header class="header">
         <img
-          src="./images/around.png"
-          alt="Logo"
           class="header__logo"
-          >
+          src="./images/header-logo.svg"
+          alt="Logo"
+        />
       </header>
-   
-        <main class="content">
-          <section class="profile">
+      <main class="content">
+        <section class="profile">
+          <div class="profile__content">
             <img
-             src="./images/profile.png"
-            alt="perfil"
-            class="profile__image"
+              class="profile__avatar"
+              src="./images/avatar-image.jpg"
+              alt="Imagem de Perfil"
+            />
+            <div class="profile__info">
+              <h1 class="profile__name">Jacques Costeau</h1>
+              <h2 class="profile__description">Explorador</h2>
+            </div>
+            <button
+              class="profile__button profile__button_type_edit"
+              type="button"
+              id="edit-button"
             >
-    <div class="profile__info">
-      <div class="profile__name-container">
-        <h1 class="profile__name">Jacques Cousteauuuuuuuuuu</h1>
-        <img
-          src="./images/edit.png"
-          alt="edit"
-          class="profile__edit-button"
-        >
-      </div>
-      <p class="profile__job">Explorador</p>
-          </div>
-          <button type="button" class="profile__add-button">
-            <img
-              src="./images/add.png"
-              alt="add"
-              class="profile__add-button-icon"
-            >
-          </button>
-          </section> 
-          <section class="elements">
-            <div class="element">
               <img
-                src="./images/vale.png"
-                alt="rio com arvores"
-                class="element__image"
-              >
-       <div class="element__description">
-          Vale de Yosemite 
-        <img
-        src="./images/like.png"
-        alt="like"
-        class="element__icon"
-        >
-      <img
-        src="./images/like-dark.png"
-        alt="dark"
-        class="element__dark-icon"
-      >
+                class="profile__icon profile__icon_type_edit"
+                src="./images/profile-edit-button.svg"
+                alt="Botão de editar"
+              />
+            </button>
+          </div>
+          <button
+            class="profile__button profile__button_type_add"
+            type="button"
+            id="add-button"
+          >
+            <img
+              class="profile__icon profile__icon_type_add"
+              src="./images/profile-add-button.svg"
+              alt="Botão de adicionar"
+            />
+          </button>
+        </section>
+        <section class="elements">
+          <div class="elements__cards">
+            <template class="elements__template">
+              <div class="elements__card">
+                <button class="elements__image-button">
+                  <img class="elements__image" src=" " alt="Imagem" />
+                </button>
+                <button
+                  class="elements__button elements__button_type_trash"
+                  type="button"
+                >
+                  <img
+                    class="elements__icon elements__icon_type_trash-cap"
+                    src="./images/trashcap.svg"
+                    alt="Lixeira"
+                  />
+                  <img
+                    class="elements__icon elements__icon_type_trash-can"
+                    src="./images/trashcan.svg"
+                    alt="Lixeira"
+                  />
+                </button>
+                <div class="elements__title">
+                  <h3 class="elements__text"></h3>
+                  <button
+                    class="elements__button elements__button_type_like"
+                    type="button"
+                  >
+                    <img
+                      class="elements__icon elements__icon_type_like-icon"
+                      src="./images/like.svg"
+                      alt="Botão de like"
+                    />
+                  </button>
+                </div>
+                <div class="elements__window">
+                  <div class="elements__container">
+                    <button
+                      class="elements__button elements__button_type_close"
+                      type="button"
+                      id="window-close-button"
+                    >
+                      <img
+                        class="elements__icon elements__icon_type_close"
+                        src="./images/popup-close-icon.svg"
+                        alt="Closed"
+                      />
+                    </button>
+                    <img class="elements__window-image" src=" " alt="Imagem" />
+                    <h3 class="elements__window-name"></h3>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy 2024 Guilherme D. Arroyo</p>
+      </footer>
+      <div class="popup" id="profile">
+        <div class="popup__container">
+          <button class="popup__button popup__button_type_close" type="button">
+            <img
+              class="popup__icon"
+              src="./images/popup-close-icon.svg"
+              alt="Fechar"
+            />
+          </button>
+          <h2 class="popup__title">Editar Perfil</h2>
+          <form class="popup__form">
+            <fieldset class="popup__name">
+              <input
+                class="popup__item popup__item_type_name"
+                type="text"
+                name="name"
+                placeholder="Nome"
+                value="Jacques Costeau"
+                required
+              />
+              <input
+                class="popup__item popup__item_type_about"
+                type="text"
+                name="name"
+                placeholder="Sobre mim"
+                value="Explorador"
+                required
+              />
+              <button class="popup__button popup__button_type_send" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="popup" id="add-popup">
+        <div class="popup__container">
+          <button
+            class="popup__button popup__button_type_close"
+            type="button"
+            id="close-add-popup"
+          >
+            <img
+              class="popup__icon"
+              src="./images/popup-close-icon.svg"
+              alt="Fechar"
+            />
+          </button>
+          <h2 class="popup__title">Novo Lugar</h2>
+          <form class="popup__form" id="add-form">
+            <fieldset class="popup__name">
+              <input
+                class="popup__item popup__item_type_name"
+                id="place-input"
+                type="text"
+                name="name"
+                placeholder="Título"
+                required
+              />
+              <input
+                class="popup__item popup__item_type_about"
+                id="link-input"
+                type="text"
+                name="name"
+                placeholder="Link da imagem"
+                required
+              />
+              <button class="popup__button popup__button_type_send" id="add-card-button" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </div>
-    <div class="element">
-      <img
-        src="./images/louise.png"
-        alt="lago entre as montanhas"
-        class="element__image"
-      >
-      <div class="element__description">
-        Lago Louise
-        <img
-          src="./images/like.png"
-          alt="like"
-          class="element__icon"
-        >
-        <img
-          src="./images/like-dark.png"
-          alt="dark"
-          class="element__dark-icon"
-        >
-      </div>
-    </div>
-    <div class="element">
-      <img
-        src="./images/montanha.png"
-        alt="montanha"
-        class="element__image"
-      >
-      <div class="element__description">
-        <p class="elements__card-name">Montanhas Careca</p>
-        <img
-          src="./images/like.png"
-          alt="like"
-          class="element__icon"
-        >
-        <img
-          src="./images/like-dark.png"
-          alt="dark"
-          class="element__dark-icon"
-        >
-      </div>
-    </div>
-    <div class="element">
-      <img
-        src="./images/latemar.png"
-        alt="montanha a noite"
-        class="element__image"
-      >
-      <div class="element__description">
-        Latemar
-        <img
-          src="./images/like.png"
-          alt="like"
-          class="element__icon"
-        >
-        <img
-          src="./images/like-dark.png"
-          alt="dark"
-          class="element__dark-icon"
-        >
-      </div>
-    </div>
-    <div class="element">
-      <img
-        src="./images/vanoise.png"
-        alt="lago com reflexo"
-        class="element__image"
-      >
-      <div class="element__description">
-        Vanoise National
-        <img
-          src="./images/like.png"
-          alt="like"
-          class="element__icon"
-        >
-        <img
-          src="./images/like-dark.png"
-          alt="dark"
-          class="element__dark-icon"
-        >
-      </div>
-    </div>
-    <div class="element">
-      <img
-        src="./images/lago.png"
-        alt="lago com barco"
-        class="element__image"
-      >
-      <div class="element__description">
-        Lago di Braies
-        <img
-          src="./images/like.png"
-          alt="like"
-          class="element__icon"
-        >
-        <img
-          src="./images/like-dark.png"
-          alt="dark"
-          class="element__dark-icon"
-        >
-      </div>
-    </div>
-  </section>
-  <section class="popup">
-    <form class="popup__container">
-     
-      <fieldset class="popup__container-fieldset">
-      <legend class="popup__container-title">Editar perfil</legend>
-        <input
-          type="text"
-          class="popup__container-input"
-          id="name"
-          required
-          placeholder="Jacques Costeau"
-        />
-        <input
-          type="text"
-          class="popup__container-input"
-          id="job"
-          required
-          placeholder="Explorador"
-        />
-      </fieldset>
-      
-      <button class="popup__container-button" type="submit">
-        Salvar
-      </button>
-
-      <button class="popup__container-closebutton">
-        <img
-          src="./images/close.png"
-          alt="close icon"
-          class="popup__container-closebuttonicon"
-        />
-      </button>
-    </form>
-  </section>
-        </main>
-        <footer class="footer">&copy; 2021 Around The U.S.</footer>
-    <script src="./index.js"></script>
-    </div>
-</body>
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>
