@@ -1,17 +1,14 @@
 const editButton = document.querySelector("#edit-button");
 const editPopup = document.querySelector("#profile");
 
-
 function showPopup() {
   editPopup.classList.add("popup_opened");
 }
 
 editButton.addEventListener("click", showPopup);
 
-
 const addButton = document.querySelector("#add-button");
 const addPopup = document.querySelector("#add-popup");
-
 
 function showAddPopup() {
   addPopup.classList.add("popup_opened");
@@ -23,13 +20,11 @@ addButton.addEventListener("click", showAddPopup);
 const popup = document.querySelector(".popup");
 const closeButton = document.querySelector(".popup__button_type_close");
 
-
 function closePopup() {
   popup.classList.remove("popup_opened");
 }
 
 closeButton.addEventListener("click", closePopup);
-
 
 const initialCards = [
   {
@@ -113,7 +108,6 @@ initialCards.forEach(function (element) {
   cardArea.append(firstcards);
 });
 
-
 function changeProfile(evt) {
   evt.preventDefault();
   const nameInput = document.querySelector(".popup__item_type_name");
@@ -121,37 +115,29 @@ function changeProfile(evt) {
   const profileName = document.querySelector(".profile__name");
   const profileAbout = document.querySelector(".profile__description");
 
-  
   profileName.textContent = nameInput.value;
   profileAbout.textContent = aboutInput.value;
 }
 
-
 const submitButton = document.querySelector(".popup__button_type_send");
 const formElement = document.querySelector(".popup__container");
 
-
 formElement.addEventListener("submit", changeProfile);
 
-
 submitButton.addEventListener("click", closePopup);
-
 
 const cardForm = document.querySelector("#add-form");
 const addCardButton = document.querySelector("#add-card-button");
 
-
 addCardButton.addEventListener("click", function () {
   cardForm.classList.add("popup_opened");
 });
-
 
 cardForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   const placeInput = document.querySelector("#place-input");
   const imageInput = document.querySelector("#link-input");
 
-  
   const newCard = createCard(placeInput.value, imageInput.value);
   cardArea.prepend(newCard);
 });
@@ -160,7 +146,6 @@ cardForm.addEventListener("submit", function (evt) {
 function closeAddPopup() {
   addPopup.classList.remove("popup_opened");
 }
-
 
 addCardButton.addEventListener("click", closeAddPopup);
 
