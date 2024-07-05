@@ -51,7 +51,7 @@
 
 .elements__text {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   max-height: 79px;

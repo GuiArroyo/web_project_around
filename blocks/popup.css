@@ -5,12 +5,12 @@
 .popup__form {
   position: fixed;
   display: flex;
+  top: 23%;
+  left: 33%;
   flex-direction: column;
   width: 430px;
   background-color: #ffffff;
   border-radius: 10px;
-  top: 23%;
-  left: 33%;
 }
 
 .popup__button-closed {
