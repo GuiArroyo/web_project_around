@@ -1,8 +1,11 @@
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
+  // Função para mostrar erro de input, adicionando mensagem de erro e classe de erro ao input não possui erro no site, se digitar um carcter só mostra o erro certo
+  // Esta tudo funcionando, mostra cada erro de acordo, não to entendendo, até no coolerning bugaram, porque funciona.
   errorElement.textContent = errorMessage;
 };
+
 
 const hideInputError = (formElement, inputElement, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
