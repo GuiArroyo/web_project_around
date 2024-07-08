@@ -68,11 +68,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding-left: 15px;
 }
 
 .elements__image-like {
   cursor: pointer;
   align-self: center;
+  padding-right:15px;
 }
 
 .elements__image-like:hover {
@@ -81,6 +83,7 @@
 
 .elements__image-like_active {
   background-image: url(../images/Union.svg);
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 900px) {

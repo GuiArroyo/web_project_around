@@ -1,29 +1,27 @@
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
+  // Verifica a propriedade ValidityState e define a mensagem de erro apropriada
+  if (inputElement.validity.valueMissing) {
+    errorMessage = 'Este campo é obrigatório.';
+  } else if (inputElement.validity.typeMismatch) {
+    errorMessage = 'Por favor, insira um valor no formato correto.';
+  } else if (inputElement.validity.patternMismatch) {
+    errorMessage = 'O valor inserido não corresponde ao padrão esperado.';
+  } else if (inputElement.validity.tooShort) {
+    errorMessage = `O valor deve ter pelo menos ${inputElement.minLength} caracteres; você inseriu ${inputElement.value.length}.`;
+  } else if (inputElement.validity.tooLong) {
+    errorMessage = `O valor deve ter no máximo ${inputElement.maxLength} caracteres; você inseriu ${inputElement.value.length}.`;
+  } else if (inputElement.validity.rangeUnderflow) {
+    errorMessage = `O valor deve ser maior ou igual a ${inputElement.min}.`;
+  } else if (inputElement.validity.rangeOverflow) {
+    errorMessage = `O valor deve ser menor ou igual a ${inputElement.max}.`;
+  } else if (inputElement.validity.stepMismatch) {
+    errorMessage = 'Por favor, insira um valor válido.';
+  } else if (inputElement.validity.customError) {
+    errorMessage = errorMessage; // Use a mensagem de erro personalizada passada como argumento
+  }
   
-
-    // Verifica a propriedade ValidityState e define a mensagem de erro apropriada
-    if (inputElement.validity.valueMissing) {
-      errorMessage = 'Este campo é obrigatório.';
-    } else if (inputElement.validity.typeMismatch) {
-      errorMessage = 'Por favor, insira um valor no formato correto.';
-    } else if (inputElement.validity.patternMismatch) {
-      errorMessage = 'O valor inserido não corresponde ao padrão esperado.';
-    } else if (inputElement.validity.tooShort) {
-      errorMessage = `O valor deve ter pelo menos ${inputElement.minLength} caracteres; você inseriu ${inputElement.value.length}.`;
-    } else if (inputElement.validity.tooLong) {
-      errorMessage = `O valor deve ter no máximo ${inputElement.maxLength} caracteres; você inseriu ${inputElement.value.length}.`;
-    } else if (inputElement.validity.rangeUnderflow) {
-      errorMessage = `O valor deve ser maior ou igual a ${inputElement.min}.`;
-    } else if (inputElement.validity.rangeOverflow) {
-      errorMessage = `O valor deve ser menor ou igual a ${inputElement.max}.`;
-    } else if (inputElement.validity.stepMismatch) {
-      errorMessage = 'Por favor, insira um valor válido.';
-    } else if (inputElement.validity.customError) {
-      errorMessage = errorMessage; // Use a mensagem de erro personalizada passada como argumento
-    }
-    
   errorElement.textContent = errorMessage;
 };
 
