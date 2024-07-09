@@ -1,12 +1,13 @@
 .popup {
   display: none;
+  
 }
 
 .popup__form {
   position: fixed;
   display: flex;
-  top: 23%;
-  left: 33%;
+  top: 195px;
+  
   flex-direction: column;
   width: 430px;
   background-color: #ffffff;
@@ -99,4 +100,6 @@
 
 .popup__open {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
