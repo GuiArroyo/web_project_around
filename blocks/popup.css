@@ -7,7 +7,7 @@
   position: fixed;
   display: flex;
   top: 195px;
-  
+  /* Retirei o left e no top no figma está em px agora funciona corretamente */
   flex-direction: column;
   width: 430px;
   background-color: #ffffff;
