@@ -1,37 +1,18 @@
+// Função para mostrar erro de input, adicionando mensagem de erro e classe de erro ao input
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
-  // Verifica a propriedade ValidityState e define a mensagem de erro apropriada
-  if (inputElement.validity.valueMissing) {
-    errorMessage = 'Este campo é obrigatório.';
-  } else if (inputElement.validity.typeMismatch) {
-    errorMessage = 'Por favor, insira um valor no formato correto.';
-  } else if (inputElement.validity.patternMismatch) {
-    errorMessage = 'O valor inserido não corresponde ao padrão esperado.';
-  } else if (inputElement.validity.tooShort) {
-    errorMessage = `O valor deve ter pelo menos ${inputElement.minLength} caracteres; você inseriu ${inputElement.value.length}.`;
-  } else if (inputElement.validity.tooLong) {
-    errorMessage = `O valor deve ter no máximo ${inputElement.maxLength} caracteres; você inseriu ${inputElement.value.length}.`;
-  } else if (inputElement.validity.rangeUnderflow) {
-    errorMessage = `O valor deve ser maior ou igual a ${inputElement.min}.`;
-  } else if (inputElement.validity.rangeOverflow) {
-    errorMessage = `O valor deve ser menor ou igual a ${inputElement.max}.`;
-  } else if (inputElement.validity.stepMismatch) {
-    errorMessage = 'Por favor, insira um valor válido.';
-  } else if (inputElement.validity.customError) {
-    errorMessage = errorMessage; // Use a mensagem de erro personalizada passada como argumento
-  }
-  
   errorElement.textContent = errorMessage;
 };
 
-
+// Função para esconder erro de input, removendo a mensagem de erro e a classe de erro do input
 const hideInputError = (formElement, inputElement, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(settings.inputErrorClass);
   errorElement.textContent = "";
 };
 
+// Função para checar a validade do input, mostrando ou escondendo o erro conforme necessário
 const checkInputValidity = (formElement, inputElement, settings) => {
   if (!inputElement.validity.valid) {
     showInputError(
@@ -45,12 +26,14 @@ const checkInputValidity = (formElement, inputElement, settings) => {
   }
 };
 
+// Função que verifica se há algum input inválido em uma lista de inputs
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 };
 
+// Função para alterar o estado do botão de submissão conforme a validade dos inputs
 const toggleButtonState = (inputList, buttonElement) => {
   console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
@@ -60,6 +43,7 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
+// Função para configurar os listeners de eventos nos inputs e no botão de submissão do formulário
 const setEventListeners = (formElement, settings) => {
   const inputList = Array.from(
     formElement.querySelectorAll(settings.inputSelector)
@@ -75,6 +59,7 @@ const setEventListeners = (formElement, settings) => {
   });
 };
 
+// Função para habilitar a validação em todos os formulários na página com base nas configurações fornecidas
 const enableValidation = (settings) => {
   const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
@@ -85,6 +70,7 @@ const enableValidation = (settings) => {
   });
 };
 
+// Chama a função enableValidation com as configurações necessárias para os formulários na página
 enableValidation({
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -94,9 +80,11 @@ enableValidation({
   errorClass: "popup__error-visible",
 });
 
+// Seleciona todos os elementos de overlay dos popups e todos os popups
 const popupOverlay = document.querySelectorAll(".popup__overlay");
 const allPopup = document.querySelectorAll(".popup");
 
+// Adiciona um evento de clique a cada overlay para fechar o popup correspondente ao clicar no overlay
 popupOverlay.forEach((overlay) => {
   overlay.addEventListener("click", () => {
     overlay.parentNode.classList.remove("popup__open");

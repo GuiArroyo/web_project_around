@@ -9,9 +9,8 @@
   width: 430px;
   background-color: #ffffff;
   border-radius: 10px;
-  top: 195px;
-    /* Retirei o left e no top no figma está em px agora funciona corretamente */
-
+  top: 23%;
+  left: 33%;
 }
 
 .popup__card-button-closed {

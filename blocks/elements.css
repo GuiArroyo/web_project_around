@@ -31,27 +31,19 @@
 }
 
 .elements__image-trash {
-  background: none;
-  border: none;
-  padding: 0;
   position: absolute;
   top: 18px;
-  right: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  right: 15px;
   cursor: pointer;
-  
 }
 
 .elements__image-trash:hover {
-  opacity: 60%;
+  opacity: 50%;
 }
 
 .elements__text {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #ffffff;
   max-height: 79px;
@@ -68,13 +60,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding-left: 15px;
 }
 
 .elements__image-like {
   cursor: pointer;
   align-self: center;
-  padding-right:15px;
 }
 
 .elements__image-like:hover {
@@ -82,8 +72,7 @@
 }
 
 .elements__image-like_active {
-  background-image: url(../images/Union.svg);
-  background-repeat: no-repeat;
+  background-image: url(/images/Union.png);
 }
 
 @media screen and (max-width: 900px) {
