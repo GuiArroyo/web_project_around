@@ -35,7 +35,6 @@ const hasInvalidInput = (inputList) => {
 
 // Função para alterar o estado do botão de submissão conforme a validade dos inputs
 const toggleButtonState = (inputList, buttonElement) => {
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add("popup__button_disabled");
   } else {
