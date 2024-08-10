@@ -1,6 +1,7 @@
-import { Card } from "./card.js";
-import { FormValidator } from "./FormValidator.js";
-import { openPopup, closePopup } from "./utils.js";
+import { Card } from "./script/card.js";
+import { FormValidator } from "./script/FormValidator.js";
+import { openPopup, closePopup } from "./script/utils.js";
+import './pages/index.css'
 
 // Elementos do DOM
 const editButton = document.querySelector(".profile__edit-button");
@@ -122,3 +123,5 @@ popupOverlay.forEach((overlay) => {
     closePopup(overlay.parentNode);
   });
 });
+
+let someStr = "Eu programei. Eu salvei. Eu empacotei.";
